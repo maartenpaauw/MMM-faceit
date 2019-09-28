@@ -1,0 +1,48 @@
+.mmm-faceit {
+
+    .skill-level {
+        margin-top: 4px;
+        margin-left: 7px;
+        height: 30px;
+    }
+
+    .elo {
+        text-align: right;
+    }
+
+    .elo-min {
+        width: 20%;
+    }
+
+    .elo-calculation {
+        width: 40%;
+        text-align: center;
+    }
+
+    .elo-max {
+        width: 20%;
+        text-align: right;
+    }
+
+    .game {
+        line-height: 1;
+        margin-bottom: 10px;
+    }
+
+    .progress {
+        line-height: 0;
+    }
+
+    progress {
+        -webkit-appearance: none;
+        height: 5px;
+
+        &::-webkit-progress-bar {
+            background: #666666;
+        }
+
+        &::-webkit-progress-value {
+            background: white;
+        }
+    }
+}

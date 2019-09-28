@@ -1,0 +1,17 @@
+{
+  "name": "MMM-faceit",
+  "version": "1.0.0",
+  "description": "MagicMirror² module which will show your FACEIT elo and level",
+  "main": "MMM-faceit.js",
+  "repository": "https://github.com/maartenpaauw/MMM-faceit",
+  "author": "maartenpaauw <maartenpaauw@gmail.com>",
+  "license": "GPL-3.0",
+  "scripts": {
+    "dev": "yarn run scss --watch",
+    "scss": "node-sass src/styles/MMM-faceit.scss --output . --output-style compressed"
+  },
+  "dependencies": {
+    "faceit-js": "0.0.3",
+    "node-sass": "4.12.0"
+  }
+}

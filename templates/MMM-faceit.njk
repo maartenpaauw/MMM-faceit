@@ -1,0 +1,57 @@
+<table class="mmm-faceit xsmall light dimmed">
+    <tr>
+        <td>
+            {% for player in players %}
+                <table>
+                    <tr>
+                        <td>
+                            <span>{{ player.nickname }}</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            {% for name, game in player.games %}
+                                {% set _helper = helper(game) %}
+                                <table class="game">
+                                    <tr>
+                                        <td>
+                                            <table>
+                                                <tr class="bold bright">
+                                                    <td colspan="2">
+                                                        <span>{{ name | upper }}</span>
+                                                    </td>
+                                                    <td class="elo">
+                                                        <span>{{ game.faceit_elo }}</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="progress">
+                                                    <td colspan="3">
+                                                        <progress value="{{ _helper.getProgressBarValue() }}" max="{{ _helper.getProgressBarMax() }}" />
+                                                    </td>
+                                                </tr>
+                                                <tr class="info">
+                                                    <td class="elo-min">
+                                                        <small>{{ _helper.getMinElo() }}</small>
+                                                    </td>
+                                                    <td class="elo-calculation">
+                                                        <small>{{ _helper.belowDiff() }} / {{ _helper.aboveDiff() }}</small>
+                                                    </td>
+                                                    <td class="elo-max">
+                                                        <small>{{ _helper.getMaxElo() }}</small>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>
+                                            <img class="skill-level" src="MMM-faceit/images/{{ game.skill_level }}.svg" />
+                                        </td>
+                                    </tr>
+                                </table>
+                            {% endfor %}
+                        </td>
+                    </td>
+                </table>
+            {% endfor %}
+        </td>
+    </tr>
+</table>
